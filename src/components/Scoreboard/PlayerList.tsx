@@ -1,11 +1,17 @@
 import { PlayerItem } from './PlayerItem'
-import { playerData, playerDataType } from './utils'
+import { playerData, playerDataType } from '../utils'
 import './PlayerList.css'
 import { useState } from 'react'
 import { AddPlayer } from './AddPlayer'
 
 const Headers = () => {
-	return <div>Rank</div>
+	return (
+		<header className='header-row'>
+			<div className='headers rank'>Rank</div>
+			<div className='headers player'>Player</div>
+			<div className='headers score'>Score</div>
+		</header>
+	)
 }
 
 export const PlayerList = () => {
@@ -17,9 +23,9 @@ export const PlayerList = () => {
 		setPlayerList([...playerList])
 	}
 
-	const handleDeletePlayer = (id: number) => {
-		const updatedPlayerList = playerList.includes(player => !player.id === id)
-		setPlayerList(updatedPlayerList)
+	const handleDeletePlayer = (index: number) => {
+		playerList.splice(index, 1)
+		setPlayerList([...playerList])
 	}
 
 	const sortPlayerListByScore = () => {
@@ -42,10 +48,10 @@ export const PlayerList = () => {
 		setPlayerList([...playerList, { name: newName, score: 0, id: 6 }])
 	}
 	return (
-		<>
+		<section className='scoreboard'>
 			<Headers />
-			<ul className='list-container'>{playerDisplay}</ul>
+			<ul className='player-list-container'>{playerDisplay}</ul>
 			<AddPlayer handleAddPlayer={handleAddPlayer} />
-		</>
+		</section>
 	)
 }

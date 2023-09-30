@@ -1,0 +1,34 @@
+.player-list-container {
+	list-style-type: none;
+	padding: 0px
+}
+
+.header-row {
+	display: flex;
+	margin-top: 16px;
+	padding: 16px 8px 8px;
+}
+
+.headers {
+	font-size: 20px;
+	text-align: center;
+}
+
+.rank {
+	width: 5%;
+	margin-right: 16px;
+}
+
+.player {
+	width: 50%;
+	margin-right: 16px;
+}
+
+.score {
+	width: 15%;
+	margin-right: 16px;
+}
+
+.scoreboard {
+	width: 60em;
+}

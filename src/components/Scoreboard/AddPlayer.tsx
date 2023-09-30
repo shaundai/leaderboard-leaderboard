@@ -1,4 +1,5 @@
 import { FormEvent, useState } from 'react'
+import './AddPlayer.css'
 
 interface AddPlayerProps {
 	handleAddPlayer: (newName: string) => void
@@ -14,14 +15,23 @@ export const AddPlayer = ({ handleAddPlayer }: AddPlayerProps) => {
 
 	const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
 		e.preventDefault()
-		handleAddPlayer(playerName)
+		if (!playerName) {
+			return
+		} else handleAddPlayer(playerName)
 	}
 
 	return (
-		<div className='add-player-form'>
-			<form onSubmit={handleSubmit}>
-				<input type='text' value={playerName} onChange={handleOnChange} />
-				<input type='submit' value='Add Player' />
+		<div>
+			<form className='add-player-form' onSubmit={handleSubmit}>
+				<input
+					className='add-player-input'
+					type='text'
+					value={playerName}
+					onChange={handleOnChange}
+				/>
+				<button type='submit' value='Add Player'>
+					Add Player
+				</button>
 			</form>
 		</div>
 	)

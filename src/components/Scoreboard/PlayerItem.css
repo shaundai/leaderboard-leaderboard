@@ -1,0 +1,76 @@
+.avatar {
+	display: inline;
+	margin: 0 auto;
+	height: 100%;
+	width: auto;
+}
+
+.avatar-container {
+	width: 100px;
+	height: 100px;
+	position: relative;
+	overflow: hidden;
+	border-radius: 50%;
+}
+
+.delete-player {
+	visibility: hidden;
+	color: #e57373;
+	cursor: pointer;
+	margin-left: 12px;
+}
+
+.player-container {
+	border-radius: 8px;
+	padding: 1.5em;
+	display: flex;
+	align-items: center;
+	margin-bottom: 16px;
+	background-color: #404040;
+}
+
+.player-info {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	width: 50%;
+	margin-right: 16px;
+}
+
+.player-container:last-child {
+	margin-bottom: none;
+}
+
+.player-name {
+	font-weight: bold;
+	font-size: 24px;
+}
+
+.player-name:hover .delete-player {
+	visibility: visible;
+}
+
+.player-score {
+	font-weight: bold;
+	font-size: 28px;
+	width: 15%;
+	margin-right: 16px;
+}
+
+.rank-container {
+	font-weight: bold;
+	font-size: 24px;
+	width: 5%;
+	margin-right: 16px;
+	color: #E8E8E8;
+}
+
+.vote-button {
+	width: 100px;
+}
+
+.vote-button-container {
+	display: flex;
+	justify-content: right;
+	width: 25%;
+}

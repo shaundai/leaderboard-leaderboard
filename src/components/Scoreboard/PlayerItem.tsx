@@ -1,4 +1,4 @@
-import { LEADER_INCREMENT, randomNumberFromInterval } from './utils'
+import { LEADER_INCREMENT, randomNumberFromInterval } from '../utils'
 import './PlayerItem.css'
 
 interface playerInfoProps {
@@ -22,7 +22,7 @@ export const PlayerItem = ({
 }) => {
 	const { id, name, src, score } = playerInfo
 
-	const handleClick = () => {
+	const handleVote = () => {
 		const currentScore =
 			id === 1
 				? score + LEADER_INCREMENT
@@ -30,28 +30,34 @@ export const PlayerItem = ({
 		handleScoreChange(index, currentScore)
 	}
 
-	const handleClick = () => {
-		handleDeletePlayer(id)
+	const handleRemove = () => {
+		handleDeletePlayer(index)
 	}
 
 	const VoteButton = () => {
 		return (
-			<button className='vote-button' onClick={handleClick}>
-				VOTE
-			</button>
+			<div className='vote-button-container'>
+				<button className='vote-button' onClick={handleVote}>
+					VOTE
+				</button>
+			</div>
 		)
 	}
 
 	return (
 		<li className='player-container' key={`${id}-${name}`}>
-			<a className='delete-player' onClick={handleClick}>
-				✖
-			</a>
-			<div>#{rank}</div>
-			<div className='avatar-container'>
-				<img className='avatar' src={src} alt={name} />
+			<tr className='rank-container'>#{rank}</tr>
+			<div className='player-info'>
+				<div className='avatar-container'>
+					<img className='avatar' src={src} alt={name} />
+				</div>
+				<span className='player-name'>
+					{name}
+					<a className='delete-player' onClick={handleRemove}>
+						✖
+					</a>
+				</span>
 			</div>
-			<span className='player-name'>{name}</span>
 			<span className='player-score'>{score}</span>
 			<VoteButton />
 		</li>

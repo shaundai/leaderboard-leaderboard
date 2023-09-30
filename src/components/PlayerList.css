@@ -1,0 +1,6 @@
+.list-container {
+  list-style-type: none;
+  border: 2px #008080 solid;
+  border-radius: 8px;
+  padding: 1.5em;
+}

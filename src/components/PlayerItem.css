@@ -1,0 +1,40 @@
+.avatar {
+	display: inline;
+	margin: 0 auto;
+	height: 100%;
+	width: auto;
+}
+
+.avatar-container {
+	width: 100px;
+	height: 100px;
+	position: relative;
+	overflow: hidden;
+	border-radius: 50%;
+}
+
+.player-container {
+	width: 50em;
+	padding: 8px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-bottom: 1px solid #E8E8E8;
+}
+
+.player-container:last-child {
+	border-bottom: none;
+}
+
+.player-name {
+	font-weight: bold;
+}
+
+.player-score {
+  font-weight: bold;
+  font-size: 28px;
+}
+
+.vote-button {
+	background-color: #008080;
+}

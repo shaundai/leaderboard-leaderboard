@@ -5,13 +5,14 @@
 
 .header-row {
 	display: flex;
-	margin-top: 16px;
-	padding: 16px 8px 8px;
+	padding: 8px 16px 0px;
+	margin-top: 24px;
+	border-radius: 8px;
+	text-align: left;
 }
 
 .headers {
 	font-size: 20px;
-	text-align: center;
 }
 
 .rank {
@@ -22,6 +23,7 @@
 .player {
 	width: 50%;
 	margin-right: 16px;
+	padding: 0px 48px;
 }
 
 .score {
@@ -30,5 +32,10 @@
 }
 
 .scoreboard {
+	width: 60em;
+}
+
+
+.vote {
 	width: 60em;
 }

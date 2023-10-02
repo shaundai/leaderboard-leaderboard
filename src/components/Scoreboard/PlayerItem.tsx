@@ -21,6 +21,8 @@ export const PlayerItem = ({
 	handleScoreChange: (index: number, score: number) => void
 }) => {
 	const { id, name, src, score } = playerInfo
+	const ogPlayerIds = [1, 2, 3, 4]
+	const isOGPlayer = ogPlayerIds.includes(id)
 
 	const handleVote = () => {
 		const currentScore =
@@ -53,9 +55,11 @@ export const PlayerItem = ({
 				</div>
 				<span className='player-name'>
 					{name}
-					<a className='delete-player' onClick={handleRemove}>
-						✖
-					</a>
+					{!isOGPlayer && (
+						<a className='delete-player' onClick={handleRemove}>
+							✖
+						</a>
+					)}
 				</span>
 			</div>
 			<span className='player-score'>{score}</span>

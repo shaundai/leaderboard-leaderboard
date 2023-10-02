@@ -3,14 +3,51 @@
 	justify-content: center;
 	align-items: center;
 	height: 48px;
+	width: 60em;
 }
 
 .add-player-input {
 	background-color: #404040;
+	color: rgba(255, 255, 255, 0.87);
+	font-size: 1em;
+	font-weight: bold;
 	border: none;
 	border-radius: 8px;
 	height: 24px;
-	width: 240px;
+	width: 80%;
 	padding: 0.6em 1.2em;
 	margin-right: 16px;
+}
+
+.add-player-button {
+	background-color: transparent;
+}
+
+.add-player-button:hover {
+	background-color: #008080;
+}
+
+.choose-avatar-button {
+	display: inline;
+	border: 1px solid white;
+	height: 100%;
+	width: 100%;
+	background: url('/src/assets/raphael.png');
+}
+
+.choose-avatar-button-container {
+	width: 100px;
+	height: 100px;
+	position: relative;
+	overflow: hidden;
+	border-radius: 50%;
+	height: 48px;
+	margin-right: 24px;
+}
+
+.choose-avatar-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 60em;
 }

@@ -1,8 +1,13 @@
 .tagline {
-  font-style: italic;
-  margin-bottom: 48x;
+	font-style: italic;
+	margin-bottom: 48x;
 }
 
 .title {
-  margin: -8px;
+	margin: -4px;
+}
+
+.leaderboard {
+	color: #008080;
+	margin-right: 16px;
 }

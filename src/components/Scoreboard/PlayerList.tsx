@@ -3,7 +3,6 @@ import { playerData, playerDataType } from '../utils'
 import './PlayerList.css'
 import { useState } from 'react'
 import { AddPlayer } from './AddPlayer'
-import michaelangelo from '../../assets/michaelangelo.jpg'
 
 const Headers = () => {
 	return (
@@ -20,8 +19,20 @@ export const PlayerList = () => {
 
 	const handleScoreChange = (index: number, newScore: number) => {
 		playerList[index] = { ...playerList[index] }
-
 		playerList[index].score = newScore
+
+		const findForeverLeaderIndex = playerList.findIndex(
+			player => player.id === 1
+		)
+
+		if (findForeverLeaderIndex !== index) {
+			playerList[findForeverLeaderIndex] = {
+				...playerList[findForeverLeaderIndex],
+			}
+			playerList[findForeverLeaderIndex].score = playerList[
+				findForeverLeaderIndex
+			].score += 5
+		}
 		setPlayerList([...playerList])
 	}
 
@@ -46,25 +57,26 @@ export const PlayerList = () => {
 			/>
 		)
 	})
+
 	let idCount = 5
 
-	const handleAddPlayer = (newName: string, avatar: string) => {
+	const handleAddPlayer = (newName: string) => {
 		setPlayerList([
 			...playerList,
 			{
 				name: newName,
-				src: `/src/assets/${avatar}.jpeg`,
+				src: '/src/assets/generic-avatar.jpeg',
 				score: 0,
-				id: idCount,
+				id: idCount++,
 			},
 		])
 		idCount++
 	}
-	return (
-		<section className='scoreboard'>
-			<Headers />
-			<ul className='player-list-container'>{playerDisplay}</ul>
-			<AddPlayer handleAddPlayer={handleAddPlayer} />
-		</section>
-	)
-}
+		return (
+			<section className='scoreboard'>
+				<Headers />
+				<ul className='player-list-container'>{playerDisplay}</ul>
+				<AddPlayer handleAddPlayer={handleAddPlayer} />
+			</section>
+		)
+	}

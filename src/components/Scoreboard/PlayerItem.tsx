@@ -18,7 +18,7 @@ export const PlayerItem = ({
 	rank: number
 	index: number
 	handleDeletePlayer: (id: number) => void
-	handleScoreChange: (index: number, score: number) => void
+	handleScoreChange: (index: number, score: number, id: number) => void
 }) => {
 	const { id, name, src, score } = playerInfo
 	const ogPlayerIds = [1, 2, 3, 4]
@@ -29,7 +29,7 @@ export const PlayerItem = ({
 			id === 1
 				? score + LEADER_INCREMENT
 				: score + randomNumberFromInterval(-5, 8)
-		handleScoreChange(index, currentScore)
+		handleScoreChange(index, currentScore, id)
 	}
 
 	const handleRemove = () => {

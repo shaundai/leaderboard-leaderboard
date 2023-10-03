@@ -26,28 +26,3 @@
 .add-player-button:hover {
 	background-color: #008080;
 }
-
-.choose-avatar-button {
-	display: inline;
-	border: 1px solid white;
-	height: 100%;
-	width: 100%;
-	background: url('/src/assets/raphael.png');
-}
-
-.choose-avatar-button-container {
-	width: 100px;
-	height: 100px;
-	position: relative;
-	overflow: hidden;
-	border-radius: 50%;
-	height: 48px;
-	margin-right: 24px;
-}
-
-.choose-avatar-container {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	width: 60em;
-}

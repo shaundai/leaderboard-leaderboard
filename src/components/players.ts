@@ -4,7 +4,6 @@ import jason from '../assets/jason.jpeg'
 import david from '../assets/david.jpeg'
 
 export const INITIAL_SCORE = 0
-export const LEADER_INCREMENT = 100
 
 export type playerDataType = {
 	name: string

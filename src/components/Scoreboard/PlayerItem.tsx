@@ -1,4 +1,5 @@
 import { LEADER_INCREMENT, randomNumberFromInterval } from '../utils'
+
 import './PlayerItem.css'
 
 interface playerInfoProps {

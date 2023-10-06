@@ -13,23 +13,30 @@ export const PlayerItem = ({
 	index,
 	handleDeletePlayer,
 	handleScoreChange,
+	setVotedPlayers,
+	setIsSuccessBannerVisible,
 }: {
 	playerInfo: playerInfoProps
 	rank: number
 	index: number
 	handleDeletePlayer: (id: number) => void
 	handleScoreChange: (index: number, score: number, id: number) => void
+	setVotedPlayers: (votedPlayers: string[]) => void
+	setIsSuccessBannerVisible: (isSuccessBannerVisible: boolean) => void
 }) => {
 	const { id, name, src, score } = playerInfo
 	const ogPlayerIds = [1, 2, 3, 4]
 	const isOGPlayer = ogPlayerIds.includes(id)
+	const isForeverLeader = id === 1
 
 	const handleVote = () => {
 		const currentScore =
-			id === 1
+			isForeverLeader
 				? score + LEADER_INCREMENT
 				: score + randomNumberFromInterval(-5, 8)
 		handleScoreChange(index, currentScore, id)
+		setVotedPlayers(isForeverLeader ? [name] : [name, 'Shaundai Person'])
+		setIsSuccessBannerVisible(true)
 	}
 
 	const handleRemove = () => {

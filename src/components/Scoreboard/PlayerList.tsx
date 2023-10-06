@@ -14,7 +14,13 @@ const Headers = () => {
 	)
 }
 
-export const PlayerList = () => {
+export const PlayerList = ({
+	setVotedPlayers,
+	setIsSuccessBannerVisible,
+}: {
+	setVotedPlayers: (votedPlayers: string[]) => void
+	setIsSuccessBannerVisible: (isSuccessBannerVisible: boolean) => void
+}) => {
 	const [playerList, setPlayerList] = useState<playerDataType>(playerData)
 
 	const handleScoreChange = (index: number, newScore: number) => {
@@ -54,6 +60,8 @@ export const PlayerList = () => {
 				index={index}
 				handleDeletePlayer={handleDeletePlayer}
 				handleScoreChange={handleScoreChange}
+				setVotedPlayers={setVotedPlayers}
+				setIsSuccessBannerVisible={setIsSuccessBannerVisible}
 			/>
 		)
 	})
@@ -72,11 +80,11 @@ export const PlayerList = () => {
 		])
 		idCount++
 	}
-		return (
-			<section className='scoreboard'>
-				<Headers />
-				<ul className='player-list-container'>{playerDisplay}</ul>
-				<AddPlayer handleAddPlayer={handleAddPlayer} />
-			</section>
-		)
-	}
+	return (
+		<section className='scoreboard'>
+			<Headers />
+			<ul className='player-list-container'>{playerDisplay}</ul>
+			<AddPlayer handleAddPlayer={handleAddPlayer} />
+		</section>
+	)
+}

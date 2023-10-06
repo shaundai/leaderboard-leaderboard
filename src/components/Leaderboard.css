@@ -4,10 +4,21 @@
 }
 
 .title {
-	margin: -4px;
+	margin: 40px 0 -4px;
 }
 
 .leaderboard {
 	color: #008080;
 	margin-right: 16px;
+}
+
+.success {
+	margin: 10px 0;
+	padding: 10px;
+	border-radius: 3px 3px 3px 3px;
+	color: #270;
+	background-color: #dff2bf;
+	position: absolute;
+	width: 52%;
+	top: 10px;
 }

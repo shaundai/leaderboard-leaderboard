@@ -73,7 +73,7 @@ export const PlayerList = ({
 			...playerList,
 			{
 				name: newName,
-				src: '/src/assets/generic-avatar.jpeg',
+				src: '/src/assets/generic-avatar.png',
 				score: 0,
 				id: idCount++,
 			},

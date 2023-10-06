@@ -6,12 +6,6 @@ import david from '../assets/david.jpeg'
 export const INITIAL_SCORE = 0
 export const LEADER_INCREMENT = 100
 
-export const randomNumberFromInterval = (min: number, max: number) => {
-	return Math.floor(Math.random() * (max - min + 1) + min)
-}
-
-export const playerIncrement = randomNumberFromInterval(-20, 8)
-
 export type playerDataType = {
 	name: string
 	id: number

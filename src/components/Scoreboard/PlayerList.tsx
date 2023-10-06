@@ -1,5 +1,5 @@
 import { PlayerItem } from './PlayerItem'
-import { playerData, playerDataType } from '../utils'
+import { playerData, playerDataType } from '../players'
 import './PlayerList.css'
 import { useState } from 'react'
 import { AddPlayer } from './AddPlayer'
@@ -22,6 +22,7 @@ export const PlayerList = ({
 	setIsSuccessBannerVisible: (isSuccessBannerVisible: boolean) => void
 }) => {
 	const [playerList, setPlayerList] = useState<playerDataType>(playerData)
+	const [idCount, setIdCount] = useState<number>(5)
 
 	const handleScoreChange = (index: number, newScore: number) => {
 		playerList[index] = { ...playerList[index] }
@@ -66,19 +67,18 @@ export const PlayerList = ({
 		)
 	})
 
-	let idCount = 5
-
 	const handleAddPlayer = (newName: string) => {
+
 		setPlayerList([
 			...playerList,
 			{
 				name: newName,
 				src: '/src/assets/generic-avatar.png',
 				score: 0,
-				id: idCount++,
+				id: idCount,
 			},
 		])
-		idCount++
+		setIdCount(idCount + 1)
 	}
 	return (
 		<section className='scoreboard'>

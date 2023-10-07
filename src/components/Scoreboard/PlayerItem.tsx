@@ -30,14 +30,18 @@ export const PlayerItem = ({
 	const isOGPlayer = ogPlayerIds.includes(id)
 	const isForeverLeader = id === 1
 
+	const handleActivateSuccessBanner = () => {
+		setIsSuccessBannerVisible(true)
+		setTimeout(() => setIsSuccessBannerVisible(false), 1500)
+	}
+
 	const handleVote = () => {
-		const currentScore =
-			isForeverLeader
-				? score + LEADER_INCREMENT
-				: score + randomNumberFromInterval(-5, 8)
+		const currentScore = isForeverLeader
+			? score + LEADER_INCREMENT
+			: score + randomNumberFromInterval(-5, 8)
 		handleScoreChange(index, currentScore, id)
 		setVotedPlayers(isForeverLeader ? [name] : [name, 'Shaundai Person'])
-		setIsSuccessBannerVisible(true)
+		handleActivateSuccessBanner()
 	}
 
 	const handleRemove = () => {

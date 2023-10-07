@@ -1,15 +1,22 @@
 .tagline {
 	font-style: italic;
-	margin-bottom: 48x;
-}
-
-.title {
-	margin: 40px 0 -4px;
+	margin: -20px 0 56px;
 }
 
 .leaderboard {
 	color: #008080;
 	margin-right: 16px;
+}
+
+.container {
+	position: relative;
+	width: 100%;
+}
+
+.page-container .hidden {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 2s, opacity 2s linear;
 }
 
 .success {
@@ -18,7 +25,8 @@
 	border-radius: 3px 3px 3px 3px;
 	color: #270;
 	background-color: #dff2bf;
+	max-width: 1280px;
 	position: absolute;
-	width: 52%;
-	top: 10px;
+	width: 100%;
+	top: -30px;
 }

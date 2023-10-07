@@ -1,2 +1,2 @@
-export { PlayerList } from './PlayerList.tsx'
-export { SuccessBanner } from './SuccessBanner.tsx'
+export { PlayerList } from './PlayerList'
+export { SuccessBanner } from './SuccessBanner'

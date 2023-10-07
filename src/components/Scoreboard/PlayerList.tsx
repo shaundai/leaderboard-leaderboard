@@ -1,8 +1,8 @@
-import { PlayerItem } from './PlayerItem'
+import { PlayerItem } from './PlayerItem.tsx'
 import { playerData, playerDataType } from '../players'
 import './PlayerList.css'
 import { useState } from 'react'
-import { AddPlayer } from './AddPlayer'
+import { AddPlayer } from './AddPlayer.tsx'
 
 const Headers = () => {
 	return (

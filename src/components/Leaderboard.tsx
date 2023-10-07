@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import { PlayerList } from './scoreboard'
-import { SuccessBanner } from './scoreboard'
+import { PlayerList } from './Scoreboard'
+import { SuccessBanner } from './Scoreboard'
 import './Leaderboard.css'
 
 export const Leaderboard = () => {

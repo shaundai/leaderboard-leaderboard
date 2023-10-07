@@ -3,6 +3,8 @@
 ## Tools
 React, TypeScript, Vite
 
+## Deployed Site
+https://cheaterboard-leaderboard.netlify.app/
 
 ## Purpose
 This leaderboard is for educational purposes only.

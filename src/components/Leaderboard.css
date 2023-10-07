@@ -13,12 +13,6 @@
 	width: 100%;
 }
 
-.page-container .hidden {
-  visibility: hidden;
-  opacity: 0;
-  transition: visibility 0s 2s, opacity 2s linear;
-}
-
 .success {
 	margin: 10px 0;
 	padding: 10px;
